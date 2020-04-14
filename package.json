@@ -22,7 +22,7 @@
       "routing-controllers": "^0.7.7",
       "typeorm": "^0.2.8",
       "typeorm-routing-controllers-extensions": "^0.2.0",
-      "yarn": "^1.12.3"
+      "yarn": "^1.22.0"
    },
    "scripts": {
       "start": "ts-node src/index.ts"
