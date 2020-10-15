@@ -1,21 +1,21 @@
-//Copyright by Damon Sawyer
-//11/28/2018
-import {Index,Entity, PrimaryColumn, PrimaryGeneratedColumn, Column, OneToOne, OneToMany, ManyToOne, ManyToMany, JoinColumn, JoinTable, RelationId} from "typeorm";
-import {User} from "./user";
+//Copyright by Damon Groove
+//9/28/2020
+import {Index,Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
+import {User} from "./User";
 
 
-@Entity("category",{schema:"ncommonv1"})
+@Entity("category",{schema:"spooky_db"})
 @Index("category_name_UNIQUE",["category_name",],{unique:true})
 @Index("fk_category_user_idx",["user_id",])
 export class Category {
 
-    @PrimaryGeneratedColumn({ 
+    @PrimaryGeneratedColumn({
         name:"id"
         })
     id:number;
-        
 
-    @Column("varchar",{ 
+
+    @Column("varchar",{
         nullable:true,
         unique: true,
         length:45,
@@ -32,10 +32,10 @@ export class Category {
     @Column("int",{nullable: true})
     user_id:number;
 
-   
+
     @ManyToOne(type=>User, user=>user.categories,{  nullable:false,onDelete: 'NO ACTION'})
     @JoinColumn({ name:'user_id'})
     user:User | null;
 
-    
+
 }

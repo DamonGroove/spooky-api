@@ -1,4 +1,5 @@
-//Copyright by Damon Sawyer
+//Copyright by Damon Groove
+//9/28/2020
 import {Body, JsonController, Post} from "routing-controllers";
 import {LoginDTO} from "../../../dto/dtos/LoginDTO";
 

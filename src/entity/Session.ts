@@ -1,5 +1,7 @@
-import {Index,Entity, PrimaryColumn, PrimaryGeneratedColumn, Column, OneToOne, OneToMany, ManyToOne, ManyToMany, JoinColumn, JoinTable, RelationId} from "typeorm";
-import {Category} from "./category";
+//Copyright by Damon Groove
+//9/28/2020
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Category} from "./Category";
 import {SessionData} from "./SessionData"
 
 

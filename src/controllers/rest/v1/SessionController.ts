@@ -1,3 +1,5 @@
+//Copyright by Damon Groove
+//9/28/2020
 import {Body, Get, JsonController, Param, Post, Put} from "routing-controllers";
 import {SessionDataDTO} from "../../../dto/dtos/SessionDataDTO";
 import {Repository} from "typeorm";

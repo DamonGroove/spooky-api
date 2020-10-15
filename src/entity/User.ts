@@ -1,11 +1,11 @@
-//Copyright by Damon Sawyer
-//11/28/2018
-import {Index,Entity, PrimaryColumn, PrimaryGeneratedColumn, Column, OneToOne, OneToMany, ManyToOne, ManyToMany, JoinColumn, JoinTable, RelationId} from "typeorm";
-import {Category} from "./category";
+//Copyright by Damon Groove
+//9/28/2020
+import {Index,Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Category} from "./Category";
 
 
 @Entity("user",{schema:"spooky_db"})
-@Index("username_UNIQUE",["user_name",],{unique:true})
+@Index("username_UNIQUE",["username",],{unique:true})
 @Index("user_email_UNIQUE",["user_email",],{unique:true})
 export class User {
 
@@ -14,15 +14,15 @@ export class User {
     })
     id:number;
 
-    @Column("varchar",{ 
+    @Column("varchar",{
         nullable:true,
         unique: true,
         length:45,
-        name:"user_name"
+        name:"username"
         })
-    user_name:string | null;
+    username:string | null;
 
-    @Column("varchar",{ 
+    @Column("varchar",{
         nullable:true,
         unique: true,
         length:255,
@@ -30,14 +30,14 @@ export class User {
         })
     user_email:string | null;
 
-    @Column("varchar",{ 
+    @Column("varchar",{
         nullable:true,
         length:45,
         name:"user_title"
         })
     user_title:string | null;
 
-    @Column("tinyint",{ 
+    @Column("tinyint",{
         nullable:true,
         width:1,
         default:"0",
@@ -46,8 +46,8 @@ export class User {
     user_admin:boolean | null;
 
 
-   
+
     @OneToMany(type=>Category, category=>category.user_id)
     categories:Category[];
-    
+
 }

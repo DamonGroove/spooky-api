@@ -1,11 +1,11 @@
-//Copyright by Damon Sawyer
-//11/28/2018
+//Copyright by Damon Groove
+//9/28/2020
 import {Body, Get, JsonController, NotFoundError, Param, Post, Put} from "routing-controllers";
 import {getConnectionManager, Repository} from "typeorm";
-import {Category} from "../../../entity/category";
+import {Category} from "../../../entity/Category";
 import {CategoryDTO} from "../../../dto/dtos/CategoryDTO";
 @JsonController("/rest/v1/categories")
-export class Category_Controller {
+export class CategoryController {
 
     private categoryRepository: Repository<Category>;
 
