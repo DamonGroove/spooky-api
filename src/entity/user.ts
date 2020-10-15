@@ -4,7 +4,7 @@ import {Index,Entity, PrimaryColumn, PrimaryGeneratedColumn, Column, OneToOne, O
 import {Category} from "./category";
 
 
-@Entity("user",{schema:"ncommonv1"})
+@Entity("user",{schema:"spooky_db"})
 @Index("username_UNIQUE",["user_name",],{unique:true})
 @Index("user_email_UNIQUE",["user_email",],{unique:true})
 export class User {
